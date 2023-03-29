@@ -6,7 +6,7 @@ node{
         sh 'mvn clean install'
     }
     stage('docker-image'){
-        sh 'docker build -t dockerfile /opt/ravilla'
+        sh 'docker build -t dockerfile /var/lib/jenkins/workspace/NewTask/target
     }
     stage('docker-login'){
         withCredentials([string(credentialsId: 'doc-cred', variable: 'rr'), string(credentialsId: 'doc-cred', variable: '')]) {
